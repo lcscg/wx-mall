@@ -115,5 +115,23 @@ Page({
       // 5 设置回缓存和data中
       this.setCart(cart);
     }
+  },
+  // 点击结算
+  async handlePay() {
+    const { address, totalNum } = this.data
+    // 判断是否有商品
+    if (totalNum === 0) {
+      await showToast({ title: "您还没有选购商品" })
+      return;
+    }
+    // 判断收货地址
+    if (!address.userName) {
+      await showToast({ title: "您还没有选择收货地址" })
+      return;
+    }
+    // 跳转支付页面
+    wx.navigateTo({
+      url: '/pages/pay/index'
+    });
   }
 });
