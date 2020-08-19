@@ -1,2 +1,1 @@
-<!--pages/1ogin/index.wxml-->
-<text>pages/1ogin/index.wxml</text>
+<button type="primary" plain="{{true}}" open-type="getUserInfo" bind:getuserinfo="getUserInfo">登录</button>
